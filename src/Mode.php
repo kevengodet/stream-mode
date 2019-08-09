@@ -76,23 +76,6 @@ final class Mode
     }
 
     /**
-     *
-     * @param int $options
-     *  @return Mode
-     */
-    public static function build($options = self::READABLE)
-    {
-        $translation = ($options & self::TEXT ) ? 't' : 'b';
-        $optionsWithoutTranslation = $options & ~self::TEXT;
-
-        if (!in_array($optionsWithoutTranslation, self::$modes)) {
-            throw new \OutOfRangeException('There is no mode for the requested options. Available modes are: '.implode(', ', array_values(self::$modes)));
-        }
-
-        return array_search($optionsWithoutTranslation, self::$modes).$translation;
-    }
-
-    /**
      * @param resource $stream
      * @return Mode
      */
