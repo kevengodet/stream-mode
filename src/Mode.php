@@ -92,6 +92,25 @@ final class Mode
         return array_search($optionsWithoutTranslation, self::$modes).$translation;
     }
 
+    /**
+     * @param resource $stream
+     * @return Mode
+     */
+    public static function fromStream($stream)
+    {
+        if (!is_resource($stream)) {
+            throw new \InvalidArgumentException;
+        }
+
+        if (get_resource_type($stream) !== 'stream') {
+            throw new \InvalidArgumentException;
+        }
+
+        $meta = stream_get_meta_data($stream);
+
+        return new Mode($meta['mode']);
+    }
+
     /** @return boolean */
     public function isReadable()
     {
