@@ -1,8 +1,8 @@
 <?php
 
-namespace Keven\StreamMode\Tests;
+namespace Text\Stream\Tests;
 
-use Keven\StreamMode\Mode;
+use Text\Stream\Mode;
 
 class ModeTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,25 +1,22 @@
 {
-    "name": "keven/stream-mode",
+    "name": "text/stream-mode",
     "description": "Object oriented wrapper to introspect a file stream mode",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Keven Godet",
-            "email": "contact@keven.fr",
-            "homepage": "http://keven.fr",
+            "email": "hello@keven.fr",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^5.3 | ^7.0"
+        "php": ">5.3"
     },
     "autoload": {
-        "psr-4": {
-            "Keven\\StreamMode\\": "src"
-        }
+        "classmap": ["src/Mode.php"]
     },
     "require-dev": {
-        "phpunit/phpunit": "^4 | ^5 | ^6 | ^7"
+        "phpunit/phpunit": ">4"
     }
 }
