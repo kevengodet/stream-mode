@@ -29,7 +29,7 @@ final class Mode
         // Overwrite already existing file
         OVERWRITE           = 64;
 
-    private static $modes = array(
+    private static $modes = [
         'r'  => self::READ,
         'r+' => self::READ | self::WRITE,
         'w'  =>              self::WRITE | self::CREATE | self::TRUNCATE | self::OVERWRITE,
@@ -40,7 +40,7 @@ final class Mode
         'x+' => self::READ | self::WRITE | self::CREATE,
         'c'  =>              self::WRITE | self::CREATE                  | self::OVERWRITE,
         'c+' => self::READ | self::WRITE | self::CREATE                  | self::OVERWRITE,
-    );
+    ];
 
     /** @var string */
     private $mode;
@@ -150,6 +150,6 @@ final class Mode
     /** @return string */
     public function __toString()
     {
-        return array_search($this->mode, self::$modes).$this->translation;
+        return array_search($this->mode, self::$modes, true) .$this->translation;
     }
 }
