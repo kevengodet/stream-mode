@@ -1,6 +1,6 @@
 <?php
 
-namespace Text\Stream;
+namespace Keven\StreamMode;
 
 /**
  * @todo Handle option 'e' (close-on-exec)
